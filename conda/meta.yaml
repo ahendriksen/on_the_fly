@@ -1,0 +1,34 @@
+
+{% set data = load_setup_py_data() %}
+
+package:
+    name: on_the_fly
+    
+    version: {{ data['version'] }}
+
+source:
+    path: ../
+
+build:
+    number: '0'
+
+requirements:
+    build:
+        - python
+        - setuptools
+
+    run:
+        - python
+        # dependencies are defined in setup.py
+        {% for dep in data['install_requires'] %}
+        - {{ dep.lower() }}
+        {% endfor %}
+
+about:
+    home: https://github.com/ahendriksen/on_the_fly
+    license_file: LICENSE.md
+    summary: "On the fly machine learning for improving image resolution in tomography"
+
+extra:
+    maintainers:
+        - Allard Hendriksen
