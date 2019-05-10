@@ -8,18 +8,6 @@ machine learning for improving image resolution in tomography".
 * Documentation: [https://ahendriksen.github.io/on_the_fly]
 
 
-## Readiness
-
-The author of this package is in the process of setting up this
-package for optimal usability. The following has already been completed:
-
-- [ ] Documentation
-    - A package description has been written in the README
-    - Documentation has been generated using `make docs`, committed,
-        and pushed to GitHub.
-	- GitHub pages have been setup in the project settings
-	  with the "source" set to "master branch /docs folder".
-
 ## Getting Started
 
 It takes a few steps to setup On the fly machine learning for improving image resolution in tomography on your
@@ -38,16 +26,16 @@ is required.
 To install this package, use conda and clone this GitHub project.
 To install the package into a new conda environment named `otf`, execute the following in the terminal:
 ```
-conda create -y -n otf python=3.6
+conda create -n otf python=3.6
 source activate otf
 conda install -c astra-toolbox/label/dev  -c aahendriksen -c pytorch -c conda-forge -c owlas \
-		msd_pytorch \
-		cudatoolkit=9.0 \
-		flexdata \
-		tomopy \
-		dxchange \
-		astra-toolbox=1.9.0.dev10 \
-		cone_balls=0.2.2
+        msd_pytorch \
+        cudatoolkit=9.0 \
+        flexdata \
+        tomopy \
+        dxchange \
+        astra-toolbox=1.9.0.dev10 \
+        cone_balls=0.2.2
 conda install h5py ipython matplotlib numexpr pyopengl pyqtgraph scikit-image tqdm
 
 # Now install the package using pip
@@ -67,13 +55,15 @@ examples
 ├── cone_foam_fast
 │   ├── cone_balls_spec.txt
 │   ├── geometries
-│   ├── Makefile
+│   └── Makefile
 ├── cone_foam_full
 │   ├── cone_balls_spec.txt
-│   └── geometries
+│   ├── geometries
+│   └── Makefile
 └── cone_foam_just_roi
     ├── cone_balls_spec.txt
-    └── geometries
+    ├── geometries
+    └── Makefile
 ```
 
 The examples directory contains three directories with a Makefile. The
@@ -159,6 +149,9 @@ make test/output-msd-A9/.dirstamp
 make test/output-bicubic/.dirstamp
 ```
 
+Another option is to bicubically upsample the whole volume. This is
+performed on the last line.
+
 ## Authors and contributors
 
 * **Allard Hendriksen** - *Initial work*
@@ -166,8 +159,6 @@ make test/output-bicubic/.dirstamp
 See also the list of [contributors](https://github.com/ahendriksen/on_the_fly/contributors) who participated in this project.
 
 ## How to contribute
-
-Contributions are always welcome. Please submit pull requests against the `master` branch.
 
 If you have any issues, questions, or remarks, then please open an issue on GitHub.
 

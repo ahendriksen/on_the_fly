@@ -18,7 +18,7 @@ with open(os.path.join('on_the_fly','VERSION')) as version_file:
 requirements = [
     # Add your project's requirements here, e.g.,
     # 'astra-toolbox',
-    # 'sacred>=0.7.2',
+    'sacred>=0.7.2',
     # 'tables==3.4.4',
 ]
 

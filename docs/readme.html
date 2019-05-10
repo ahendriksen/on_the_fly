@@ -82,7 +82,6 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">On-the-fly machine learning for improving image resolution in tomography</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#readiness">Readiness</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#installing">Installing</a></li>
@@ -175,22 +174,6 @@ machine learning for improving image resolution in tomography”.</p>
 <li><p>Free software: GNU General Public License v3</p></li>
 <li><p>Documentation: [https://ahendriksen.github.io/on_the_fly]</p></li>
 </ul>
-<div class="section" id="readiness">
-<h2>Readiness<a class="headerlink" href="#readiness" title="Permalink to this headline">¶</a></h2>
-<p>The author of this package is in the process of setting up this
-package for optimal usability. The following has already been completed:</p>
-<ul class="simple">
-<li><p>[ ] Documentation</p>
-<ul>
-<li><p>A package description has been written in the README</p></li>
-<li><p>Documentation has been generated using <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">docs</span></code>, committed,
-and pushed to GitHub.</p></li>
-<li><p>GitHub pages have been setup in the project settings
-with the “source” set to “master branch /docs folder”.</p></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <p>It takes a few steps to setup On the fly machine learning for improving image resolution in tomography on your
@@ -207,16 +190,16 @@ is required.</p>
 <h3>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">¶</a></h3>
 <p>To install this package, use conda and clone this GitHub project.
 To install the package into a new conda environment named <code class="docutils literal notranslate"><span class="pre">otf</span></code>, execute the following in the terminal:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">y</span> <span class="o">-</span><span class="n">n</span> <span class="n">otf</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.6</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">otf</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.6</span>
 <span class="n">source</span> <span class="n">activate</span> <span class="n">otf</span>
 <span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">astra</span><span class="o">-</span><span class="n">toolbox</span><span class="o">/</span><span class="n">label</span><span class="o">/</span><span class="n">dev</span>  <span class="o">-</span><span class="n">c</span> <span class="n">aahendriksen</span> <span class="o">-</span><span class="n">c</span> <span class="n">pytorch</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">-</span><span class="n">c</span> <span class="n">owlas</span> \
-		<span class="n">msd_pytorch</span> \
-		<span class="n">cudatoolkit</span><span class="o">=</span><span class="mf">9.0</span> \
-		<span class="n">flexdata</span> \
-		<span class="n">tomopy</span> \
-		<span class="n">dxchange</span> \
-		<span class="n">astra</span><span class="o">-</span><span class="n">toolbox</span><span class="o">=</span><span class="mf">1.9</span><span class="o">.</span><span class="mf">0.</span><span class="n">dev10</span> \
-		<span class="n">cone_balls</span><span class="o">=</span><span class="mf">0.2</span><span class="o">.</span><span class="mi">2</span>
+        <span class="n">msd_pytorch</span> \
+        <span class="n">cudatoolkit</span><span class="o">=</span><span class="mf">9.0</span> \
+        <span class="n">flexdata</span> \
+        <span class="n">tomopy</span> \
+        <span class="n">dxchange</span> \
+        <span class="n">astra</span><span class="o">-</span><span class="n">toolbox</span><span class="o">=</span><span class="mf">1.9</span><span class="o">.</span><span class="mf">0.</span><span class="n">dev10</span> \
+        <span class="n">cone_balls</span><span class="o">=</span><span class="mf">0.2</span><span class="o">.</span><span class="mi">2</span>
 <span class="n">conda</span> <span class="n">install</span> <span class="n">h5py</span> <span class="n">ipython</span> <span class="n">matplotlib</span> <span class="n">numexpr</span> <span class="n">pyopengl</span> <span class="n">pyqtgraph</span> <span class="n">scikit</span><span class="o">-</span><span class="n">image</span> <span class="n">tqdm</span>
 
 <span class="c1"># Now install the package using pip</span>
@@ -235,13 +218,15 @@ examples folder.</p>
 ├── cone_foam_fast
 │   ├── cone_balls_spec.txt
 │   ├── geometries
-│   ├── Makefile
+│   └── Makefile
 ├── cone_foam_full
 │   ├── cone_balls_spec.txt
-│   └── geometries
+│   ├── geometries
+│   └── Makefile
 └── cone_foam_just_roi
     ├── cone_balls_spec.txt
-    └── geometries
+    ├── geometries
+    └── Makefile
 </pre></div>
 </div>
 <p>The examples directory contains three directories with a Makefile. The
@@ -318,6 +303,8 @@ make test/output-msd-A9/.dirstamp
 make test/output-bicubic/.dirstamp
 </pre></div>
 </div>
+<p>Another option is to bicubically upsample the whole volume. This is
+performed on the last line.</p>
 </div>
 </div>
 <div class="section" id="authors-and-contributors">
@@ -329,7 +316,6 @@ make test/output-bicubic/.dirstamp
 </div>
 <div class="section" id="how-to-contribute">
 <h2>How to contribute<a class="headerlink" href="#how-to-contribute" title="Permalink to this headline">¶</a></h2>
-<p>Contributions are always welcome. Please submit pull requests against the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch.</p>
 <p>If you have any issues, questions, or remarks, then please open an issue on GitHub.</p>
 </div>
 <div class="section" id="license">
