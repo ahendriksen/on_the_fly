@@ -43,7 +43,7 @@ dev_requirements = [
     # Other
     'watchdog',
     'coverage',
-    
+
     ]
 
 setup(
@@ -65,6 +65,18 @@ setup(
     include_package_data=True,
     keywords='on_the_fly',
     name='on_the_fly',
+    entry_points='''
+        [console_scripts]
+        otf-project=on_the_fly.project:entry_main
+        otf-display=on_the_fly.display:entry_main
+        otf-normalize=on_the_fly.normalize:entry_main
+        otf-reconstruct=on_the_fly.reconstruct:entry_main
+        otf-subtract=on_the_fly.subtract:entry_main
+        otf-extract=on_the_fly.extract:entry_main
+        otf-resample=on_the_fly.resample:entry_main
+        otf-train=on_the_fly.train:entry_main
+        otf-process=on_the_fly.process:entry_main
+    ''',
     packages=find_packages(include=['on_the_fly']),
     setup_requires=setup_requirements,
     test_suite='tests',

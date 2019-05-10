@@ -1,9 +1,8 @@
-# On the fly machine learning for improving image resolution in tomography
+# On-the-fly machine learning for improving image resolution in tomography
 
-On the fly machine learning for improving image resolution in tomography
+This package contains code for the manuscript of "On-the-fly machine
+learning for improving image resolution in tomography".
 
-This paragraph should contain a high-level description of the package, with a
-brief overview of its features and limitations.
 
 
 * Free software: GNU General Public License v3
@@ -73,27 +72,51 @@ machine. We recommend installing
 [Anaconda package manager](https://www.anaconda.com/download/) for
 Python 3.
 
-### Installing with conda
+### Installing
 
-Simply install with:
+To install this package, use conda and clone this GitHub project.
+The installation instructions are as follows:
 ```
-conda install -c cicwi on_the_fly
-```
+conda create -y -n otf python=3.6
+source activate otf
+conda install -c astra-toolbox/label/dev  -c aahendriksen -c pytorch -c conda-forge -c owlas \
+		msd_pytorch \
+		cudatoolkit=9.0 \
+		flexdata \
+		tomopy \
+		dxchange \
+		astra-toolbox \
+		cone_balls=0.2.2
+conda install h5py ipython matplotlib numexpr pyopengl pyqtgraph scikit-image tqdm
 
-### Installing from source
-
-To install On the fly machine learning for improving image resolution in tomography, simply clone this GitHub
-project. Go to the cloned directory and run PIP installer:
-```
+# Now install the package using pip
 git clone https://github.com/ahendriksen/on_the_fly.git
 cd on_the_fly
-pip install -e .
+pip install .
 ```
 
 ### Running the examples
 
 To learn more about the functionality of the package check out our
 examples folder.
+
+examples
+├── check_recon_astra.py
+├── check_recon_astra.py~
+├── cone_foam_fast
+│   ├── cone_balls_spec.txt
+│   ├── geometries
+│   ├── Makefile
+├── cone_foam_full
+│   ├── cone_balls_spec.txt
+│   └── geometries
+├── cone_foam_just_roi
+│   ├── cone_balls_spec.txt
+│   └── geometries
+
+
+
+
 
 ## Authors and contributors
 

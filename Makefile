@@ -90,3 +90,26 @@ install_dev:
 conda_package:
 	conda install conda-build -y
 	conda build conda/
+
+environment:
+	conda create -y -n otf -c astra-toolbox/label/dev  -c aahendriksen -c pytorch -c conda-forge -c owlas \
+		python=3.6 \
+		msd_pytorch \
+		cudatoolkit=9.0 \
+		flexdata \
+		tomopy \
+		dxchange \
+		matplotlib \
+		tqdm \
+		astra-toolbox \
+		ipython \
+		pyqtgraph \
+		numexpr \
+		matplotlib \
+		h5py \
+		pyopengl \
+		pymongo \
+		cone_balls=0.2.2 \
+		scikit-image
+	source activate otf && pip install sacred git+https://github.com/ahendriksen/sacred_utils
+	source activate otf && pip install -e .
