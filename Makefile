@@ -101,7 +101,7 @@ environment:
 		dxchange \
 		matplotlib \
 		tqdm \
-		astra-toolbox \
+		astra-toolbox=1.9.0.dev10 \
 		ipython \
 		pyqtgraph \
 		numexpr \

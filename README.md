@@ -1,68 +1,11 @@
 # On-the-fly machine learning for improving image resolution in tomography
 
-This package contains code for the manuscript of "On-the-fly machine
-learning for improving image resolution in tomography".
-
+This package contains code accompanying the manuscript of "On-the-fly
+machine learning for improving image resolution in tomography".
 
 
 * Free software: GNU General Public License v3
 * Documentation: [https://ahendriksen.github.io/on_the_fly]
-
-
-## Readiness
-
-The author of this package is in the process of setting up this
-package for optimal usability. The following has already been completed:
-
-- [ ] Documentation
-    - A package description has been written in the README
-    - Documentation has been generated using `make docs`, committed,
-        and pushed to GitHub.
-	- GitHub pages have been setup in the project settings
-	  with the "source" set to "master branch /docs folder".
-- [ ] An initial release
-	- In `CHANGELOG.md`, a release date has been added to v0.1.0 (change the YYYY-MM-DD).
-	- The release has been marked a release on GitHub.
-	- For more info, see the [Software Release Guide](https://cicwi.github.io/software-guides/software-release-guide).
-- [ ] A conda package
-    - Required packages have been added to `setup.py`, for instance,
-      ```
-      requirements = [
-          # Add your project's requirements here, e.g.,
-          # 'astra-toolbox',
-          # 'sacred>=0.7.2',
-          # 'tables==3.4.4',
-      ]
-      ```
-      has been replaced by
-      ```
-      requirements = [
-          'astra-toolbox',
-          'sacred>=0.7.2',
-          'tables==3.4.4',
-      ]
-      ```
-    - All "conda channels" that are required for building and
-      installing the package have been added to the
-      `Makefile`. Specifically, replace
-      ```
-      conda_package:
-        conda install conda-build -y
-        conda build conda/
-      ```
-      by
-      ```
-      conda_package:
-        conda install conda-build -y
-        conda build conda/ -c some-channel -c some-other-channel
-      ```
-    - Conda packages have been built successfully with `make conda_package`.
-    - These conda packages have been uploaded to
-      [Anaconda](https://anaconda.org). [This](http://docs.anaconda.com/anaconda-cloud/user-guide/getting-started/#cloud-getting-started-build-upload)
-      is a good getting started guide.
-    - The installation instructions (below) have been updated. Do not
-      forget to add the required channels, e.g., `-c some-channel -c
-      some-other-channel`, and your own channel, e.g., `-c ahendriksen`.
 
 
 ## Getting Started
@@ -72,10 +15,16 @@ machine. We recommend installing
 [Anaconda package manager](https://www.anaconda.com/download/) for
 Python 3.
 
+### Requirements
+
+To install and execute the code in this package, conda on 64-bit Linux
+is required. Moreover, a CUDA 9.0-compatible graphics card and runtime
+is required.
+
 ### Installing
 
 To install this package, use conda and clone this GitHub project.
-The installation instructions are as follows:
+To install the package into a new conda environment named `otf`, execute the following in the terminal:
 ```
 conda create -y -n otf python=3.6
 source activate otf
@@ -85,7 +34,7 @@ conda install -c astra-toolbox/label/dev  -c aahendriksen -c pytorch -c conda-fo
 		flexdata \
 		tomopy \
 		dxchange \
-		astra-toolbox \
+		astra-toolbox=1.9.0.dev10 \
 		cone_balls=0.2.2
 conda install h5py ipython matplotlib numexpr pyopengl pyqtgraph scikit-image tqdm
 
@@ -100,9 +49,9 @@ pip install .
 To learn more about the functionality of the package check out our
 examples folder.
 
+The examples folder has the following hierarchy:
+```
 examples
-├── check_recon_astra.py
-├── check_recon_astra.py~
 ├── cone_foam_fast
 │   ├── cone_balls_spec.txt
 │   ├── geometries
@@ -110,13 +59,93 @@ examples
 ├── cone_foam_full
 │   ├── cone_balls_spec.txt
 │   └── geometries
-├── cone_foam_just_roi
-│   ├── cone_balls_spec.txt
-│   └── geometries
+└── cone_foam_just_roi
+    ├── cone_balls_spec.txt
+    └── geometries
+```
 
+The examples directory contains three directories with a Makefile. The
+`cone_foam_full` directory contains the specification of the data as
+it is used in the paper. Because generating each projection dataset
+can take 2 hours with a recent GPU, I have created
+`cone_foam_just_roi` where all voids have been removed that do not
+intersect the upper or central region of interest, and
+`cone_foam_fast` in which 90% of the voids have been
+removed. Generating the projections of `cone_foam_fast` should take
+roughly 10 minutes per projection dataset on a modern GPU.
 
+Each directory contains a Makefile that can be used to generate
 
+  * Projection data
+  * Reconstructions
+  * Training and test sets
 
+Moreover, the makefile contains instructions to train the networks and
+to process the input of the test set with the trained neural networks.
+
+#### Generating projections
+
+To generate projection data of the entire foam ball, a zoomed-in
+central region of interest, and a zoomed-in upper region of interest,
+run:
+
+``` shell
+make data/zoom1/.dirstamp
+make data/zoom4_centre/.dirstamp
+make data/zoom4_top/.dirstamp
+```
+
+#### Reconstructing
+
+To reconstruct the entire volume and the regions of interest, run the
+following. All intermediate projection data will be saved in the
+`processing` directory.
+
+``` shell
+make reconstruction/zoom/.dirstamp
+make reconstruction/zoom4_centre/.dirstamp
+make reconstruction/zoom4_top/.dirstamp
+
+```
+
+#### Generating training and testing datasets
+
+The following commands will generate the training and test set.
+
+``` shell
+make training_set
+make test_set
+```
+
+#### Training
+
+To train a neural network, execute either one of
+
+``` shell
+make weights/unet-B1.torch
+make weights/unet-A1.torch
+make weights/unet-A9.torch
+make weights/msd-B1.torch
+make weights/msd-A1.torch
+make weights/msd-A9.torch
+```
+
+To train for more than one epoch, make sure to edit the variable named
+`EPOCH` at the top of the `Makefile`.
+
+### Testing
+
+To see how a neural network performs on the test set, execute either one of
+
+``` shell
+make test/output-unet-B/.dirstamp
+make test/output-unet-A1/.dirstamp
+make test/output-unet-A9/.dirstamp
+make test/output-msd-B/.dirstamp
+make test/output-msd-A1/.dirstamp
+make test/output-msd-A9/.dirstamp
+make test/output-bicubic/.dirstamp
+```
 
 ## Authors and contributors
 
@@ -125,8 +154,6 @@ examples
 See also the list of [contributors](https://github.com/ahendriksen/on_the_fly/contributors) who participated in this project.
 
 ## How to contribute
-
-Contributions are always welcome. Please submit pull requests against the `master` branch.
 
 If you have any issues, questions, or remarks, then please open an issue on GitHub.
 
