@@ -54,7 +54,7 @@ def load_stack(path, *, skip=1, squeeze=False):
     otherwise it is not going to look pretty..
 
     :param path: path to directory containing tiff files
-    :param skip: read every `skip' image
+    :param skip: read every `skip` image
     :param squeeze: whether to remove any empty dimensions from image
     :returns: an np.array containing the values in the tiff files
     :rtype: np.array

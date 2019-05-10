@@ -386,7 +386,7 @@ class BatchSliceDataset:
     """Dataset slice data.
 
     Arguments:
-        *tensors (Tensor): tensors that have the same size of the first dimension.
+        tensors (Tensor): tensors that have the same size of the first dimension.
     """
 
     def __init__(self, dataset, num_before, num_after, reflect=False):

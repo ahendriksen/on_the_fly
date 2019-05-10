@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>on_the_fly.utils &mdash; On the fly machine learning for improving image resolution in tomography  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> On the fly machine learning for improving image resolution in tomography
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../readme.html">On-the-fly machine learning for improving image resolution in tomography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">on_the_fly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">On the fly machine learning for improving image resolution in tomography</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>on_the_fly.utils</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for on_the_fly.utils</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="k">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+
+
+<div class="viewcode-block" id="print_run"><a class="viewcode-back" href="../../on_the_fly.html#on_the_fly.utils.print_run">[docs]</a><span class="k">def</span> <span class="nf">print_run</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+    <span class="n">run</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">current_run</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">run</span><span class="o">.</span><span class="n">_id</span>
+    <span class="k">if</span> <span class="nb">id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="s2">&quot;no_id&quot;</span>
+
+    <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">path</span> <span class="o">/</span> <span class="n">f</span><span class="s2">&quot;README_</span><span class="si">{id}</span><span class="s2">&quot;</span>
+
+    <span class="c1"># Info dictionaries</span>
+    <span class="n">host_info</span> <span class="o">=</span> <span class="n">run</span><span class="o">.</span><span class="n">host_info</span>
+    <span class="c1"># {&#39;hostname&#39;: &#39;sipsey.ci.cwi.nl&#39;,</span>
+    <span class="c1">#  &#39;os&#39;: [&#39;Linux&#39;,</span>
+    <span class="c1">#   &#39;Linux-4.20.6-100.fc28.x86_64-x86_64-with-fedora-28-Twenty_Eight&#39;],</span>
+    <span class="c1">#  &#39;python_version&#39;: &#39;3.6.8&#39;,</span>
+    <span class="c1">#  &#39;cpu&#39;: &#39;Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz&#39;,</span>
+    <span class="c1">#  &#39;gpus&#39;: {&#39;gpus&#39;: [{&#39;model&#39;: &#39;GeForce GTX 1070&#39;,</span>
+    <span class="c1">#     &#39;total_memory&#39;: 8119,</span>
+    <span class="c1">#     &#39;persistence_mode&#39;: False}],</span>
+    <span class="c1">#   &#39;driver_version&#39;: &#39;415.27&#39;},</span>
+    <span class="c1">#  &#39;ENV&#39;: {}}</span>
+    <span class="n">experiment_info</span> <span class="o">=</span> <span class="n">run</span><span class="o">.</span><span class="n">experiment_info</span>
+    <span class="c1"># {&#39;name&#39;: &#39;Test sacred&#39;,</span>
+    <span class="c1">#  &#39;base_dir&#39;: &#39;/export/scratch1/hendriks/projects/fact_fiction/fact_fiction&#39;,</span>
+    <span class="c1">#  &#39;sources&#39;: [(&#39;test_sacred.py&#39;, &#39;166e98a4abc1c62cb95e85383010bcbe&#39;)],</span>
+    <span class="c1">#  &#39;dependencies&#39;: [&#39;ipython==7.4.0&#39;, &#39;numpy==1.15.4&#39;, &#39;sacred==0.7.4&#39;],</span>
+    <span class="c1">#  &#39;repositories&#39;: [],</span>
+    <span class="c1">#  &#39;mainfile&#39;: &#39;test_sacred.py&#39;}</span>
+
+    <span class="n">meta_info</span> <span class="o">=</span> <span class="n">run</span><span class="o">.</span><span class="n">meta_info</span>
+    <span class="c1"># {&#39;command&#39;: &#39;main&#39;,</span>
+    <span class="c1">#  &#39;options&#39;: {&#39;--sql&#39;: None,</span>
+    <span class="c1">#   &#39;--name&#39;: None,</span>
+    <span class="c1">#   &#39;--beat_interval&#39;: None,</span>
+    <span class="c1">#   &#39;--capture&#39;: None,</span>
+    <span class="c1">#   &#39;--priority&#39;: None,</span>
+    <span class="c1">#   &#39;--mongo_db&#39;: None,</span>
+    <span class="c1">#   &#39;--loglevel&#39;: None,</span>
+    <span class="c1">#   &#39;--debug&#39;: False,</span>
+    <span class="c1">#   &#39;--pdb&#39;: False,</span>
+    <span class="c1">#   &#39;--enforce_clean&#39;: False,</span>
+    <span class="c1">#   &#39;--unobserved&#39;: False,</span>
+    <span class="c1">#   &#39;--tiny_db&#39;: None,</span>
+    <span class="c1">#   &#39;--force&#39;: False,</span>
+    <span class="c1">#   &#39;--print_config&#39;: False,</span>
+    <span class="c1">#   &#39;--comment&#39;: None,</span>
+    <span class="c1">#   &#39;--file_storage&#39;: None,</span>
+    <span class="c1">#   &#39;--queue&#39;: False,</span>
+    <span class="c1">#   &#39;--help&#39;: False,</span>
+    <span class="c1">#   &#39;with&#39;: True,</span>
+    <span class="c1">#   &#39;UPDATE&#39;: [&#39;param1=10&#39;],</span>
+    <span class="c1">#   &#39;help&#39;: False,</span>
+    <span class="c1">#   &#39;COMMAND&#39;: None}}</span>
+
+    <span class="n">updated_parameters</span> <span class="o">=</span> <span class="n">meta_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;options&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;UPDATE&quot;</span><span class="p">,</span> <span class="p">[])</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="n">experiment_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">command</span> <span class="o">=</span> <span class="n">meta_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;command&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+    <span class="n">command_line</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+    <span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="n">hostname</span> <span class="o">=</span> <span class="n">host_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;hostname&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------------------------------------------------&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;-- experiment   ({now:%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S})&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------------------------------------------------&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{name}</span><span class="s2"> - </span><span class="si">{command}</span><span class="s2"> (</span><span class="si">{id}</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">updated_parameters</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;    </span><span class="si">{u}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------------------------------------------------&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;-- command line&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------------------------------------------------&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{hostname}</span><span class="s2"> </span><span class="si">{cwd}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;$ </span><span class="si">{command_line}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+        <span class="n">info_dicts</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="s2">&quot;configuration&quot;</span><span class="p">,</span> <span class="n">run</span><span class="o">.</span><span class="n">config</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;host_info&quot;</span><span class="p">,</span> <span class="n">host_info</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;experiment_info&quot;</span><span class="p">,</span> <span class="n">experiment_info</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;meta_info&quot;</span><span class="p">,</span> <span class="n">meta_info</span><span class="p">),</span>
+        <span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">info_dicts</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------------------------------------------------&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;-- </span><span class="si">{name}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------------------------------------------------&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{k:&lt;20}</span><span class="s2"> : </span><span class="si">{v}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Author
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

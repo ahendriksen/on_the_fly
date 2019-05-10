@@ -1,0 +1,748 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>on_the_fly package &mdash; On the fly machine learning for improving image resolution in tomography  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Changelog" href="changelog.html" />
+    <link rel="prev" title="on_the_fly" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> On the fly machine learning for improving image resolution in tomography
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">On-the-fly machine learning for improving image resolution in tomography</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">on_the_fly</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">on_the_fly package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-on_the_fly.dataset">on_the_fly.dataset module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-on_the_fly.display">on_the_fly.display module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-on_the_fly.extract">on_the_fly.extract module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-on_the_fly.geometry">on_the_fly.geometry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-on_the_fly.normalize">on_the_fly.normalize module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-on_the_fly.on_the_fly">on_the_fly.on_the_fly module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-on_the_fly.process">on_the_fly.process module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-on_the_fly.project">on_the_fly.project module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-on_the_fly.reconstruct">on_the_fly.reconstruct module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-on_the_fly.resample">on_the_fly.resample module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-on_the_fly.subtract">on_the_fly.subtract module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-on_the_fly.tomo">on_the_fly.tomo module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-on_the_fly.train">on_the_fly.train module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-on_the_fly.unet">on_the_fly.unet module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-on_the_fly.utils">on_the_fly.utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-on_the_fly">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">On the fly machine learning for improving image resolution in tomography</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">on_the_fly</a> &raquo;</li>
+        
+      <li>on_the_fly package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/on_the_fly.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="on-the-fly-package">
+<h1>on_the_fly package<a class="headerlink" href="#on-the-fly-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-on_the_fly.dataset">
+<span id="on-the-fly-dataset-module"></span><h2>on_the_fly.dataset module<a class="headerlink" href="#module-on_the_fly.dataset" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="on_the_fly.dataset.BatchSliceDataset">
+<em class="property">class </em><code class="descclassname">on_the_fly.dataset.</code><code class="descname">BatchSliceDataset</code><span class="sig-paren">(</span><em>dataset</em>, <em>num_before</em>, <em>num_after</em>, <em>reflect=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/dataset.html#BatchSliceDataset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.dataset.BatchSliceDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Dataset slice data.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>tensors (Tensor): tensors that have the same size of the first dimension.</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="on_the_fly.dataset.BatchSliceDataset.get_slice_from_ds">
+<code class="descname">get_slice_from_ds</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/dataset.html#BatchSliceDataset.get_slice_from_ds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.dataset.BatchSliceDataset.get_slice_from_ds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="on_the_fly.dataset.CroppingDataset">
+<em class="property">class </em><code class="descclassname">on_the_fly.dataset.</code><code class="descname">CroppingDataset</code><span class="sig-paren">(</span><em>dataset</em>, <em>remove_slices=0</em>, <em>remove_sides=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/dataset.html#CroppingDataset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.dataset.CroppingDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="on_the_fly.dataset.ImageDataset">
+<em class="property">class </em><code class="descclassname">on_the_fly.dataset.</code><code class="descname">ImageDataset</code><span class="sig-paren">(</span><em>input_path_specifier</em>, <em>target_path_specifier</em>, <em>*</em>, <em>collapse_channels=False</em>, <em>labels=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/dataset.html#ImageDataset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.dataset.ImageDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.utils.data.dataset.Dataset</span></code></p>
+<p>A dataset for images stored on disk.</p>
+<dl class="attribute">
+<dt id="on_the_fly.dataset.ImageDataset.num_labels">
+<code class="descname">num_labels</code><a class="headerlink" href="#on_the_fly.dataset.ImageDataset.num_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of labels in this image stack.</p>
+<p>If the stack is not labeled, this property access raises a
+RuntimeError.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The number of labels in this image stack.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="on_the_fly.dataset.ImageStack">
+<em class="property">class </em><code class="descclassname">on_the_fly.dataset.</code><code class="descname">ImageStack</code><span class="sig-paren">(</span><em>path_specifier</em>, <em>*</em>, <em>collapse_channels=False</em>, <em>labels=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/dataset.html#ImageStack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.dataset.ImageStack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A stack of images stored on disk.</p>
+<p>An image stack describes a collection of images matching the
+file path specifier <cite>path_specifier</cite>.</p>
+<p>The images can be tiff files, or any other image filetype
+supported by imageio.</p>
+<p>The image paths are sorted using a natural sorting
+mechanism. So “scan1.tif” comes before “scan10.tif”.</p>
+<p>Images can be retrieved by indexing into the stack. For example:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ImageStack(&quot;*.tif&quot;)[i]</span></code></p>
+<p>These images are returned as torch
+tensors with three dimensions CxHxW.</p>
+<dl class="method">
+<dt id="on_the_fly.dataset.ImageStack.find_images">
+<code class="descname">find_images</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/dataset.html#ImageStack.find_images"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.dataset.ImageStack.find_images" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="on_the_fly.dataset.ImageStack.num_labels">
+<code class="descname">num_labels</code><a class="headerlink" href="#on_the_fly.dataset.ImageStack.num_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of labels in this image stack.</p>
+<p>If the stack is not labeled, this property access raises a
+RuntimeError.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The number of labels in this image stack.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-on_the_fly.display">
+<span id="on-the-fly-display-module"></span><h2>on_the_fly.display module<a class="headerlink" href="#module-on_the_fly.display" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="on_the_fly.display.entry_main">
+<code class="descclassname">on_the_fly.display.</code><code class="descname">entry_main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/display.html#entry_main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.display.entry_main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.display.main">
+<code class="descclassname">on_the_fly.display.</code><code class="descname">main</code><span class="sig-paren">(</span><em>path</em>, <em>levels</em>, <em>skip</em>, <em>projections</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/display.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.display.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-on_the_fly.extract">
+<span id="on-the-fly-extract-module"></span><h2>on_the_fly.extract module<a class="headerlink" href="#module-on_the_fly.extract" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="on_the_fly.extract.entry_main">
+<code class="descclassname">on_the_fly.extract.</code><code class="descname">entry_main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/extract.html#entry_main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.extract.entry_main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.extract.main">
+<code class="descclassname">on_the_fly.extract.</code><code class="descname">main</code><span class="sig-paren">(</span><em>input_dir</em>, <em>output_dir</em>, <em>volume_geometry</em>, <em>mask_volume_geometry</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/extract.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.extract.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-on_the_fly.geometry">
+<span id="on-the-fly-geometry-module"></span><h2>on_the_fly.geometry module<a class="headerlink" href="#module-on_the_fly.geometry" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="on_the_fly.geometry.calculate_mask_index">
+<code class="descclassname">on_the_fly.geometry.</code><code class="descname">calculate_mask_index</code><span class="sig-paren">(</span><em>vg</em>, <em>mask_vg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/geometry.html#calculate_mask_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.geometry.calculate_mask_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.geometry.get_extents_shape">
+<code class="descclassname">on_the_fly.geometry.</code><code class="descname">get_extents_shape</code><span class="sig-paren">(</span><em>vg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/geometry.html#get_extents_shape"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.geometry.get_extents_shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-on_the_fly.normalize">
+<span id="on-the-fly-normalize-module"></span><h2>on_the_fly.normalize module<a class="headerlink" href="#module-on_the_fly.normalize" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="on_the_fly.normalize.entry_main">
+<code class="descclassname">on_the_fly.normalize.</code><code class="descname">entry_main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/normalize.html#entry_main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.normalize.entry_main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.normalize.main">
+<code class="descclassname">on_the_fly.normalize.</code><code class="descname">main</code><span class="sig-paren">(</span><em>input_path</em>, <em>scan_type</em>, <em>rotation_angle</em>, <em>output_dir</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/normalize.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.normalize.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.normalize.process_flexray">
+<code class="descclassname">on_the_fly.normalize.</code><code class="descname">process_flexray</code><span class="sig-paren">(</span><em>input_path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/normalize.html#process_flexray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.normalize.process_flexray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.normalize.process_tomcat">
+<code class="descclassname">on_the_fly.normalize.</code><code class="descname">process_tomcat</code><span class="sig-paren">(</span><em>input_path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/normalize.html#process_tomcat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.normalize.process_tomcat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-on_the_fly.on_the_fly">
+<span id="on-the-fly-on-the-fly-module"></span><h2>on_the_fly.on_the_fly module<a class="headerlink" href="#module-on_the_fly.on_the_fly" title="Permalink to this headline">¶</a></h2>
+<p>Main module.</p>
+<dl class="function">
+<dt id="on_the_fly.on_the_fly.documentation_example">
+<code class="descclassname">on_the_fly.on_the_fly.</code><code class="descname">documentation_example</code><span class="sig-paren">(</span><em>a</em>, <em>b</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/on_the_fly.html#documentation_example"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.on_the_fly.documentation_example" title="Permalink to this definition">¶</a></dt>
+<dd><p>This sentence briefly describes the function.</p>
+<p>For more information on docstrings, see:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://stackoverflow.com/a/24385103">https://stackoverflow.com/a/24385103</a></p>
+</div></blockquote>
+<p>This function returns a tuple containing the input parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – this is a first parameter (int)</p></li>
+<li><p><strong>b</strong> – this is the second parameter (string)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a tuple</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(int, string)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.on_the_fly.hello_world">
+<code class="descclassname">on_the_fly.on_the_fly.</code><code class="descname">hello_world</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/on_the_fly.html#hello_world"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.on_the_fly.hello_world" title="Permalink to this definition">¶</a></dt>
+<dd><p>Say hello to world.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Nothing</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>NoneType</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-on_the_fly.process">
+<span id="on-the-fly-process-module"></span><h2>on_the_fly.process module<a class="headerlink" href="#module-on_the_fly.process" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="on_the_fly.process.entry_main">
+<code class="descclassname">on_the_fly.process.</code><code class="descname">entry_main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/process.html#entry_main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.process.entry_main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.process.main">
+<code class="descclassname">on_the_fly.process.</code><code class="descname">main</code><span class="sig-paren">(</span><em>input_dir</em>, <em>output_dir</em>, <em>weights_file</em>, <em>network</em>, <em>slab_size</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/process.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.process.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-on_the_fly.project">
+<span id="on-the-fly-project-module"></span><h2>on_the_fly.project module<a class="headerlink" href="#module-on_the_fly.project" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="on_the_fly.project.entry_main">
+<code class="descclassname">on_the_fly.project.</code><code class="descname">entry_main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/project.html#entry_main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.project.entry_main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.project.main">
+<code class="descclassname">on_the_fly.project.</code><code class="descname">main</code><span class="sig-paren">(</span><em>input_dir</em>, <em>output_dir</em>, <em>volume_geometry</em>, <em>mask_volume_geometry</em>, <em>projection_geometry</em>, <em>scan_type</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/project.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.project.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-on_the_fly.reconstruct">
+<span id="on-the-fly-reconstruct-module"></span><h2>on_the_fly.reconstruct module<a class="headerlink" href="#module-on_the_fly.reconstruct" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="on_the_fly.reconstruct.entry_main">
+<code class="descclassname">on_the_fly.reconstruct.</code><code class="descname">entry_main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/reconstruct.html#entry_main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.reconstruct.entry_main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.reconstruct.main">
+<code class="descclassname">on_the_fly.reconstruct.</code><code class="descname">main</code><span class="sig-paren">(</span><em>input_path</em>, <em>scan_type</em>, <em>output_dir</em>, <em>volume_geometry</em>, <em>projection_geometry</em>, <em>rot_center</em>, <em>angle_offset</em>, <em>mask_ratio</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/reconstruct.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.reconstruct.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.reconstruct.reconstruct_flexray">
+<code class="descclassname">on_the_fly.reconstruct.</code><code class="descname">reconstruct_flexray</code><span class="sig-paren">(</span><em>proj</em>, <em>volume_geometry</em>, <em>projection_geometry</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/reconstruct.html#reconstruct_flexray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.reconstruct.reconstruct_flexray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.reconstruct.reconstruct_simulation">
+<code class="descclassname">on_the_fly.reconstruct.</code><code class="descname">reconstruct_simulation</code><span class="sig-paren">(</span><em>proj</em>, <em>volume_geometry</em>, <em>projection_geometry</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/reconstruct.html#reconstruct_simulation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.reconstruct.reconstruct_simulation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.reconstruct.reconstruct_tomcat">
+<code class="descclassname">on_the_fly.reconstruct.</code><code class="descname">reconstruct_tomcat</code><span class="sig-paren">(</span><em>proj</em>, <em>angle_offset</em>, <em>rot_center</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/reconstruct.html#reconstruct_tomcat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.reconstruct.reconstruct_tomcat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-on_the_fly.resample">
+<span id="on-the-fly-resample-module"></span><h2>on_the_fly.resample module<a class="headerlink" href="#module-on_the_fly.resample" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="on_the_fly.resample.bicubic">
+<code class="descclassname">on_the_fly.resample.</code><code class="descname">bicubic</code><span class="sig-paren">(</span><em>input_vol</em>, <em>output_dir</em>, <em>factor</em>, <em>up=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/resample.html#bicubic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.resample.bicubic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.resample.entry_main">
+<code class="descclassname">on_the_fly.resample.</code><code class="descname">entry_main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/resample.html#entry_main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.resample.entry_main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.resample.main">
+<code class="descclassname">on_the_fly.resample.</code><code class="descname">main</code><span class="sig-paren">(</span><em>input_dir</em>, <em>output_dir</em>, <em>factor</em>, <em>direction</em>, <em>method</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/resample.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.resample.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-on_the_fly.subtract">
+<span id="on-the-fly-subtract-module"></span><h2>on_the_fly.subtract module<a class="headerlink" href="#module-on_the_fly.subtract" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="on_the_fly.subtract.entry_main">
+<code class="descclassname">on_the_fly.subtract.</code><code class="descname">entry_main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/subtract.html#entry_main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.subtract.entry_main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.subtract.main">
+<code class="descclassname">on_the_fly.subtract.</code><code class="descname">main</code><span class="sig-paren">(</span><em>a</em>, <em>b</em>, <em>output_dir</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/subtract.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.subtract.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-on_the_fly.tomo">
+<span id="on-the-fly-tomo-module"></span><h2>on_the_fly.tomo module<a class="headerlink" href="#module-on_the_fly.tomo" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="on_the_fly.tomo.astra2flex">
+<code class="descclassname">on_the_fly.tomo.</code><code class="descname">astra2flex</code><span class="sig-paren">(</span><em>proj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/tomo.html#astra2flex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.tomo.astra2flex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.tomo.fdk">
+<code class="descclassname">on_the_fly.tomo.</code><code class="descname">fdk</code><span class="sig-paren">(</span><em>proj_data</em>, <em>vol_geom</em>, <em>proj_geom</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/tomo.html#fdk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.tomo.fdk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.tomo.flex2astra">
+<code class="descclassname">on_the_fly.tomo.</code><code class="descname">flex2astra</code><span class="sig-paren">(</span><em>proj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/tomo.html#flex2astra"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.tomo.flex2astra" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.tomo.load_geometry">
+<code class="descclassname">on_the_fly.tomo.</code><code class="descname">load_geometry</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/tomo.html#load_geometry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.tomo.load_geometry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.tomo.load_stack">
+<code class="descclassname">on_the_fly.tomo.</code><code class="descname">load_stack</code><span class="sig-paren">(</span><em>path</em>, <em>*</em>, <em>skip=1</em>, <em>squeeze=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/tomo.html#load_stack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.tomo.load_stack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a stack of tiff files.</p>
+<p>Make sure that the tiff files are sorted <em>alphabetically</em>,
+otherwise it is not going to look pretty..</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – path to directory containing tiff files</p></li>
+<li><p><strong>skip</strong> – read every <cite>skip</cite> image</p></li>
+<li><p><strong>squeeze</strong> – whether to remove any empty dimensions from image</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>an np.array containing the values in the tiff files</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.tomo.load_tiffs">
+<code class="descclassname">on_the_fly.tomo.</code><code class="descname">load_tiffs</code><span class="sig-paren">(</span><em>paths</em>, <em>squeeze=False</em>, <em>dtype=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/tomo.html#load_tiffs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.tomo.load_tiffs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.tomo.proj2sino">
+<code class="descclassname">on_the_fly.tomo.</code><code class="descname">proj2sino</code><span class="sig-paren">(</span><em>proj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/tomo.html#proj2sino"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.tomo.proj2sino" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.tomo.project">
+<code class="descclassname">on_the_fly.tomo.</code><code class="descname">project</code><span class="sig-paren">(</span><em>vol_data</em>, <em>vol_geom</em>, <em>proj_geom</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/tomo.html#project"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.tomo.project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.tomo.save_geometry">
+<code class="descclassname">on_the_fly.tomo.</code><code class="descname">save_geometry</code><span class="sig-paren">(</span><em>path</em>, <em>geometry</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/tomo.html#save_geometry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.tomo.save_geometry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.tomo.save_stack">
+<code class="descclassname">on_the_fly.tomo.</code><code class="descname">save_stack</code><span class="sig-paren">(</span><em>path</em>, <em>data</em>, <em>*</em>, <em>prefix='output'</em>, <em>exist_ok=True</em>, <em>parents=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/tomo.html#save_stack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.tomo.save_stack" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.tomo.sino2proj">
+<code class="descclassname">on_the_fly.tomo.</code><code class="descname">sino2proj</code><span class="sig-paren">(</span><em>proj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/tomo.html#sino2proj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.tomo.sino2proj" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-on_the_fly.train">
+<span id="on-the-fly-train-module"></span><h2>on_the_fly.train module<a class="headerlink" href="#module-on_the_fly.train" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="on_the_fly.train.entry_main">
+<code class="descclassname">on_the_fly.train.</code><code class="descname">entry_main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/train.html#entry_main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.train.entry_main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.train.main">
+<code class="descclassname">on_the_fly.train.</code><code class="descname">main</code><span class="sig-paren">(</span><em>_run</em>, <em>input_dir</em>, <em>target_dir</em>, <em>weights_file</em>, <em>network</em>, <em>slab_size</em>, <em>epochs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/train.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.train.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="on_the_fly.train.save_network">
+<code class="descclassname">on_the_fly.train.</code><code class="descname">save_network</code><span class="sig-paren">(</span><em>model</em>, <em>path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/train.html#save_network"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.train.save_network" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-on_the_fly.unet">
+<span id="on-the-fly-unet-module"></span><h2>on_the_fly.unet module<a class="headerlink" href="#module-on_the_fly.unet" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="on_the_fly.unet.UNet">
+<em class="property">class </em><code class="descclassname">on_the_fly.unet.</code><code class="descname">UNet</code><span class="sig-paren">(</span><em>n_channels</em>, <em>n_classes</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/unet.html#UNet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.unet.UNet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="method">
+<dt id="on_the_fly.unet.UNet.clear_buffers">
+<code class="descname">clear_buffers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/unet.html#UNet.clear_buffers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.unet.UNet.clear_buffers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="on_the_fly.unet.UNet.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/unet.html#UNet.forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.unet.UNet.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="on_the_fly.unet.UNetRegressionModel">
+<em class="property">class </em><code class="descclassname">on_the_fly.unet.</code><code class="descname">UNetRegressionModel</code><span class="sig-paren">(</span><em>c_in</em>, <em>c_out</em>, <em>depth</em>, <em>width</em>, <em>loss_function</em>, <em>dilation</em>, <em>reflect</em>, <em>conv3d</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/unet.html#UNetRegressionModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.unet.UNetRegressionModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">msd_pytorch.msd_model.MSDModel</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="on_the_fly.unet.double_conv">
+<em class="property">class </em><code class="descclassname">on_the_fly.unet.</code><code class="descname">double_conv</code><span class="sig-paren">(</span><em>in_ch</em>, <em>out_ch</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/unet.html#double_conv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.unet.double_conv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<p>(conv =&gt; BN =&gt; ReLU) * 2</p>
+<dl class="method">
+<dt id="on_the_fly.unet.double_conv.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/unet.html#double_conv.forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.unet.double_conv.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="on_the_fly.unet.down">
+<em class="property">class </em><code class="descclassname">on_the_fly.unet.</code><code class="descname">down</code><span class="sig-paren">(</span><em>in_ch</em>, <em>out_ch</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/unet.html#down"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.unet.down" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="method">
+<dt id="on_the_fly.unet.down.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/unet.html#down.forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.unet.down.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="on_the_fly.unet.inconv">
+<em class="property">class </em><code class="descclassname">on_the_fly.unet.</code><code class="descname">inconv</code><span class="sig-paren">(</span><em>in_ch</em>, <em>out_ch</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/unet.html#inconv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.unet.inconv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="method">
+<dt id="on_the_fly.unet.inconv.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/unet.html#inconv.forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.unet.inconv.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="on_the_fly.unet.outconv">
+<em class="property">class </em><code class="descclassname">on_the_fly.unet.</code><code class="descname">outconv</code><span class="sig-paren">(</span><em>in_ch</em>, <em>out_ch</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/unet.html#outconv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.unet.outconv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="method">
+<dt id="on_the_fly.unet.outconv.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/unet.html#outconv.forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.unet.outconv.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="on_the_fly.unet.up">
+<em class="property">class </em><code class="descclassname">on_the_fly.unet.</code><code class="descname">up</code><span class="sig-paren">(</span><em>in_ch</em>, <em>out_ch</em>, <em>bilinear=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/unet.html#up"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.unet.up" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="method">
+<dt id="on_the_fly.unet.up.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>x1</em>, <em>x2</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/unet.html#up.forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.unet.up.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-on_the_fly.utils">
+<span id="on-the-fly-utils-module"></span><h2>on_the_fly.utils module<a class="headerlink" href="#module-on_the_fly.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="on_the_fly.utils.print_run">
+<code class="descclassname">on_the_fly.utils.</code><code class="descname">print_run</code><span class="sig-paren">(</span><em>ex</em>, <em>path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/on_the_fly/utils.html#print_run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#on_the_fly.utils.print_run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-on_the_fly">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-on_the_fly" title="Permalink to this headline">¶</a></h2>
+<p>Top-level package for On the fly machine learning for improving image resolution in tomography.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules.html" class="btn btn-neutral float-left" title="on_the_fly" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Author
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
