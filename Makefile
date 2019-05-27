@@ -94,7 +94,7 @@ conda_package:
 environment:
 	conda create -y -n otf -c astra-toolbox/label/dev  -c aahendriksen -c pytorch -c conda-forge -c owlas \
 		python=3.6 \
-		msd_pytorch \
+		msd_pytorch=0.5.1 \
 		cudatoolkit=9.0 \
 		flexdata \
 		tomopy \

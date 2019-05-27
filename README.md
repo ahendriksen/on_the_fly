@@ -29,7 +29,7 @@ To install the package into a new conda environment named `otf`, execute the fol
 conda create -n otf python=3.6
 source activate otf
 conda install -c astra-toolbox/label/dev  -c aahendriksen -c pytorch -c conda-forge -c owlas \
-        msd_pytorch \
+        msd_pytorch=0.5.1 \
         cudatoolkit=9.0 \
         flexdata \
         tomopy \
