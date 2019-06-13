@@ -158,6 +158,12 @@ performed on the last line.
 
 See also the list of [contributors](https://github.com/ahendriksen/on_the_fly/contributors) who participated in this project.
 
+## Acknowledgements
+
+* We thank [milesial](https://github.com/milesial) for making
+  [available](https://github.com/milesial/Pytorch-UNet) a high-quality
+  pytorch version of the U-net network architecture.
+
 ## How to contribute
 
 If you have any issues, questions, or remarks, then please open an issue on GitHub.
